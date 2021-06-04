@@ -4,5 +4,8 @@ public class Opponent {
 
     private int oppPick= 0;
 
+    public Opponent(){
+    }
+
 
 }
