@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="../static.static/main.css" th:href="@{static/main.css}">
+    <title>Input</title>
 </head>
 <body>
-
+    <h1>Input</h1>
+    <h2>Make a choice!</h2>
+    <form action="Output.html" th:action="@{Output}" th:object="${choice}">
+        <div th:if="${#fields.hasErrors('*')}">
+            <h3>Input Error</h3>
+            <ul>
+                <li th:each="e: ${#fields.errors('*')}" th:text="${e}">Input Error</li>
+            </ul>
+        </div>
+        <p>
+            <label>Player Choice:</label>
+            <label><input type="radio" th:field="*{pick}" th:value="0">Rock</label>
+            <label><input type="radio" th:field="*{pick}" th:value="1">Paper</label>
+            <label><input type="radio" th:field="*{pick}" th:value="2">Scissors</label>
+        </p>
+        <p>
+            <input type="Play" value="Send">
+        </p>
+        <footer>Sheridan, Peter Drab</footer>
+    </form>
 </body>
 </html>
