@@ -2,8 +2,9 @@ package sheridan.drabpe.rpsa1.model;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import java.io.Serializable;
 
-public class Choice {
+public class Choice implements Serializable {
 
     @Min(0)
     @Max(2)
