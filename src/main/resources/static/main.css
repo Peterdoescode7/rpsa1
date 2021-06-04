@@ -1,0 +1,14 @@
+h1{
+    color: darkgreen;
+}
+h2{
+    color:darkblue;
+}
+label{
+    font-weight: bold;
+    color: dodgerblue;
+}
+div{
+    font-style: italic;
+    color: darkred;
+}

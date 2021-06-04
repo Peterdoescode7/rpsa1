@@ -14,11 +14,11 @@ public class inputoutputController {
     @GetMapping(value ={"/", "/Input"})
     public ModelAndView input(){
 
-        return new ModelAndView("Input", "employee", new Choice());
+        return new ModelAndView("Input", "choice", new Choice());
     }
 
     @GetMapping("/Output")
-    public String output(@Validated @ModelAttribute Choice employee,
+    public String output(@Validated @ModelAttribute Choice choice,
                          BindingResult bindingResult,
                          Model model){
 
@@ -26,7 +26,7 @@ public class inputoutputController {
             return "Input";
         }
 
-        model.addAttribute("employee", employee);
+        model.addAttribute("choice", choice);
         return "Output";
     }
 }
