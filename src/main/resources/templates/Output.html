@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="../static/css/main.css" th:href="@{static.static/css/main.css}">
   <title>Title</title>
 </head>
 <body>
+<h1>Output</h1>
 
+<div th:switch="${Choice.pick}">
+  <p th:case="0">Rock</p>
+  <p th:case="1">Paper</p>
+  <p th:case="2">Scissors</p>
+</div>
+<p>
+  <a href="Input.html" th:href="@{Input}">Back to Input Page</a>
+</p>
 </body>
 </html>
