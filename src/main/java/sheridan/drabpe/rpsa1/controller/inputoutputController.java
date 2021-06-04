@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.ModelAndView;
 import sheridan.drabpe.rpsa1.domain.Choice;
 
-
-import java.awt.*;
-
 @Controller
 public class inputoutputController {
 
