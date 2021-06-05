@@ -20,7 +20,7 @@
   <p th:case="2">Opponent chose Scissors</p>
 </div>
 
-<p><span th:text="${winner.theWinner}">value</span></p>
+<p><span th:field="*{winner.whoWins(choice.pick,opponent.oppPick)}">value</span></p>
 
 
 <p>
