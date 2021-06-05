@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import sheridan.drabpe.rpsa1.domain.Choice;
 import sheridan.drabpe.rpsa1.domain.Opponent;
@@ -27,4 +29,14 @@ public class inputoutputController {
         model.addAttribute("winner", winner);
         return "Output";
     }
+
+    @RequestMapping(value = "winner", method = RequestMethod.GET)
+    public String theWinner(Winner winner, Model model) {
+        model.addAttribute("winner", winner);
+
+
+        return "message/list";
+    }
+
+
 }

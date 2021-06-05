@@ -82,9 +82,6 @@ public class Winner implements Serializable {
                 }
                 break;
             }
-
-
-
         return theWinner;
     }
 }

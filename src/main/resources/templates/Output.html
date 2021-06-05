@@ -20,8 +20,8 @@
   <p th:case="2">Opponent chose Scissors</p>
 </div>
 
-<p th:text="${choice.pick}" ></p>
-<p th:text="${opponent.oppPick}" ></p>
+<p><span th:text="${winner.theWinner}">value</span></p>
+
 
 <p>
   <a href="Input.html" th:href="@{Input}">Play Again!</a>
