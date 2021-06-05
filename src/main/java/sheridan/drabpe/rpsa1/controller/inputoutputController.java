@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.ModelAndView;
 import sheridan.drabpe.rpsa1.domain.Choice;
+import sheridan.drabpe.rpsa1.domain.Opponent;
 
 @Controller
 public class inputoutputController {
@@ -19,15 +20,16 @@ public class inputoutputController {
     }
 
     @GetMapping("/Output")
-    public String output(@Validated @ModelAttribute Choice choice,
-                         BindingResult bindingResult,
-                         Model model){
+    public String output(@Validated @ModelAttribute Choice choice, Opponent opponent, Model model){
 
+        /*
         if(bindingResult.hasErrors()){
             return "Input";
         }
+*/
 
         model.addAttribute("choice", choice);
+        model.addAttribute("opponent", opponent);
         return "Output";
     }
 }

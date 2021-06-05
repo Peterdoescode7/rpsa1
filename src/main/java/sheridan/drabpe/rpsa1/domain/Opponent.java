@@ -1,11 +1,12 @@
 package sheridan.drabpe.rpsa1.domain;
 
 import java.util.Random;
+import java.io.Serializable;
 
 @SuppressWarnings("unused")
-public class Opponent {
+public class Opponent implements Serializable{
 
-    private int oppPick= 0;
+    private int oppPick= randPick();
 
     public Opponent(){
     }
@@ -19,7 +20,7 @@ public class Opponent {
     }
 
     public void setOppPick(int oppPick) {
-        this.oppPick = randPick();
+        this.oppPick = oppPick;
     }
 
     @Override
@@ -31,8 +32,6 @@ public class Opponent {
 
     public int randPick(){
         Random random = new Random();
-        int intInRange = random.nextInt(2 - 0) + 0;
-        return intInRange;
+        return random.nextInt(3);
     }
-
 }
