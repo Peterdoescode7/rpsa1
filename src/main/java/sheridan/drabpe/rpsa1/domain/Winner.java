@@ -14,7 +14,48 @@ public class Winner implements Serializable {
         this.status = status;
     }
 
-    public String getStatus() {
+    public String getStatus(Choice choice, Opponent opponent){
+        String status = "";
+        int userPick1 = choice.getPick();
+        int oppPick1 = opponent.getOppPick();
+        switch (userPick1) {
+            case 0:
+                if (oppPick1 == 0) {
+                    status = "Rock versus Rock, it's a tie!";
+                    return status;
+                } else if (oppPick1 == 1) {
+                    status = "Rock versus Paper you lose!";
+                    return status;
+                } else if (oppPick1 == 2) {
+                    status = "Rock versus Scissors you win!";
+                    return status;
+                }
+                break;
+            case 1:
+                if (oppPick1 == 0) {
+                    status = "Paper versus Rock you win!";
+                    return status;
+                } else if (oppPick1 == 1) {
+                    status = "Paper versus Paper, it's a tie!";
+                    return status;
+                } else if (oppPick1 == 2) {
+                    status = "Paper versus Scissors you lose!";
+                    return status;
+                }
+                break;
+            case 2:
+                if (oppPick1 == 0) {
+                    status = "Scissors versus Rock you lose!";
+                    return status;
+                } else if (oppPick1 == 1) {
+                    status = "Scissors versus Paper you win!";
+                    return status;
+                } else if (oppPick1 == 2) {
+                    status = "Scissors versus Scissors, it's a tie!";
+                    return status;
+                }
+                break;
+        }
         return status;
     }
 
@@ -27,50 +68,5 @@ public class Winner implements Serializable {
         return "Winner{" +
                 "status='" + status + '\'' +
                 '}';
-    }
-
-    public String whoWins(Choice choice, Opponent opponent) {
-        String theWinner = "";
-        int userPick1 = choice.getPick();
-        int oppPick1 = opponent.getOppPick();
-        switch (userPick1) {
-            case 0:
-                if (oppPick1 == 0) {
-                    theWinner = "Rock versus Rock, it's a tie!";
-                    return theWinner;
-                } else if (oppPick1 == 1) {
-                    theWinner = "Rock versus Paper you lose!";
-                    return theWinner;
-                } else if (oppPick1 == 2) {
-                    theWinner = "Rock versus Scissors you win!";
-                    return theWinner;
-                }
-                break;
-            case 1:
-                if (oppPick1 == 0) {
-                    theWinner = "Paper versus Rock you win!";
-                    return theWinner;
-                } else if (oppPick1 == 1) {
-                    theWinner = "Paper versus Paper, it's a tie!";
-                    return theWinner;
-                } else if (oppPick1 == 2) {
-                    theWinner = "Paper versus Scissors you lose!";
-                    return theWinner;
-                }
-                break;
-            case 2:
-                if (oppPick1 == 0) {
-                    theWinner = "Scissors versus Rock you lose!";
-                    return theWinner;
-                } else if (oppPick1 == 1) {
-                    theWinner = "Scissors versus Paper you win!";
-                    return theWinner;
-                } else if (oppPick1 == 2) {
-                    theWinner = "Scissors versus Scissors, it's a tie!";
-                    return theWinner;
-                }
-                break;
-        }
-        return theWinner;
     }
 }

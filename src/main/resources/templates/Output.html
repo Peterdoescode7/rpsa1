@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../static/main.css" th:href="@{static/main.css}">
+  <link rel="stylesheet" href="../static/main.css" th:href="@{/static/main.css}">
   <title>Title</title>
 </head>
 <body>
@@ -20,7 +20,7 @@
   <p th:case="2">Opponent chose Scissors</p>
 </div>
 
-<p><span th:field="*{winner.whoWins(choice.pick,opponent.oppPick)}">value</span></p>
+<div th:text="${winner.getStatus(choice,opponent)}">value</div>
 
 
 <p>
