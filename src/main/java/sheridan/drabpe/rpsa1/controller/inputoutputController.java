@@ -20,7 +20,7 @@ public class inputoutputController {
     }
 
     @GetMapping("/Output")
-    public String output(@Validated @ModelAttribute Choice choice, Opponent opponent, Model model){
+    public String output(@Validated @ModelAttribute Choice choice, Opponent opponent, Winner winner, Model model){
 
         /*
         if(bindingResult.hasErrors()){
@@ -30,6 +30,7 @@ public class inputoutputController {
 
         model.addAttribute("choice", choice);
         model.addAttribute("opponent", opponent);
+        model.addAttribute(("winner", winner))
         return "Output";
     }
 }

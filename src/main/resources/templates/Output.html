@@ -9,19 +9,21 @@
 <h1>Output</h1>
 
 <div th:switch="${choice.pick}">
-  <p th:case="0">Rock</p>
-  <p th:case="1">Paper</p>
-  <p th:case="2">Scissors</p>
+  <p th:case="0">You chose Rock</p>
+  <p th:case="1">You chose Paper</p>
+  <p th:case="2">You chose Scissors</p>
 </div>
 
 <div th:switch="${opponent.oppPick}">
-  <p th:case="0">Rock</p>
-  <p th:case="1">Paper</p>
-  <p th:case="2">Scissors</p>
+  <p th:case="0">Opponent chose Rock</p>
+  <p th:case="1">Opponent chose Paper</p>
+  <p th:case="2">Opponent chose Scissors</p>
 </div>
 
+<p th:text="${winner.status}" ></p>
+
 <p>
-  <a href="Input.html" th:href="@{Input}">Back to Input Page</a>
+  <a href="Input.html" th:href="@{Input}">Play Again!</a>
 </p>
 <footer>Sheridan, Peter Drab</footer>
 </body>
