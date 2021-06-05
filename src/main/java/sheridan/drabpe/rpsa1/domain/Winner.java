@@ -1,9 +1,5 @@
 package sheridan.drabpe.rpsa1.domain;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import java.io.Serializable;
 
 @SuppressWarnings("unused")
@@ -33,8 +29,7 @@ public class Winner implements Serializable {
                 '}';
     }
 
-    @RequestMapping(value="/Output", method= RequestMethod.POST)
-    public void findWinner(@RequestParam("pick") String pick) {
-        System.out.println(pick);
+    public String whoWins(int choice.pick, int opponent.oppPick){
+        return "mango";
     }
 }
